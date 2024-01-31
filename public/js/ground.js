@@ -10,12 +10,9 @@ class Ground {
         });
     }
     draw(ctx) {
-        ctx.fillStyle = "#005500";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
         for (let i = 0; i < this.points.length; i++) {
             const point = this.points[i];
-            new Circle(point['x'], point['y'], 5, 'white').draw(ctx);
+            new Circle(ctx, point['x'], point['y'], 5, 'white');
         }
     }
 }

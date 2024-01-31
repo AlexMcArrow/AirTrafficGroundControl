@@ -7,30 +7,16 @@
     <title>Air Traffic Ground Control</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/utils.js"></script>
-    <script src="./js/ground.js"></script>
+    <script src="./js/ground.js"></script>    
     <script src="./js/primitives/circle.js"></script>
+    <script src="./js/world.js"></script>
 </head>
 
 <body>
     <canvas id="viewport"></canvas>
     <script>
-        const canvas = document.getElementById("viewport");
-        canvas.height = document.body.clientHeight - 2;
-        canvas.width = document.body.clientWidth - 2;
-
-        window.addEventListener('resize', debounce(() => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            ground.draw(ctx);
-        }))
-
-        const ctx = canvas.getContext("2d");
-        let ground = new Ground();
-        
-        ground.addPoint(100, 100);
-        ground.addPoint(200, 200);
-
-        ground.draw(ctx);
+        let world = new World();
+        // world.start();
     </script>
 </body>
 
